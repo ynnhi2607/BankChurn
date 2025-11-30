@@ -24,11 +24,11 @@ Dự án này dự đoán khả năng khách hàng rời bỏ ngân hàng (churn
 - **Mục tiêu cụ thể:** Xây dựng pipeline xử lý dữ liệu, huấn luyện mô hình dự đoán churn, đánh giá hiệu quả và trực quan hóa kết quả.
 
 ## Dataset
-- **Nguồn dữ liệu:** [BankChurners.csv](data/raw/BankChurners.csv) từ Kaggle.
+- **Nguồn dữ liệu:** [BankChurners](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers) từ Kaggle.
 - **Mô tả các features:**
-  - Customer_Age, Gender, Dependent_count, Education_Level, Marital_Status, Income_Category, Card_Category, Months_on_book, Total_Relationship_Count, Months_Inactive_12_mon, Contacts_Count_12_mon, Credit_Limit, Total_Revolving_Bal, Avg_Open_To_Buy, Total_Amt_Chng_Q4_Q1, Total_Trans_Amt, Total_Trans_Ct, Total_Ct_Chng_Q4_Q1, Avg_Utilization_Ratio, Attrition_Flag (label).
+  - `Customer_Age`, `Gender, Dependent_count`, `Education_Level`, `Marital_Status`, `Income_Category`, `Card_Category`, `Months_on_book`, `Total_Relationship_Count`, `Months_Inactive_12_mon`, `Contacts_Count_12_mon`, `Credit_Limit`, `Total_Revolving_Bal`, `Avg_Open_To_Buy`, `Total_Amt_Chng_Q4_Q1`, `Total_Trans_Amt`, `Total_Trans_Ct`, `Total_Ct_Chng_Q4_Q1`, `Avg_Utilization_Ratio`, `Attrition_Flag` (label).
 - **Kích thước & đặc điểm:**
-  - ~10,000 dòng, 23 cột. Dữ liệu đa dạng, có cả số và phân loại, có thể có missing values.
+  - ~10,000 dòng, 23 cột. Dữ liệu đa dạng, có cả số và phân loại, có missing values.
 
 ## Method
 - **Quy trình xử lý dữ liệu:**
@@ -36,11 +36,7 @@ Dự án này dự đoán khả năng khách hàng rời bỏ ngân hàng (churn
   2. Tiền xử lý: loại bỏ missing values, mã hóa biến phân loại, chuẩn hóa dữ liệu (notebooks/02_preprocessing.ipynb)
   3. Lưu dữ liệu đã xử lý vào `data/processed/preprocessed_data.npz`
 - **Thuật toán sử dụng:**
-  - Logistic Regression, KNN (Tự cài đặt bằng numpy)
-  - Công thức Logistic Regression:
-    $$
-    P(y=1|X) = \frac{1}{1 + e^{-(w^TX + b)}}
-    $$
+  - Logistic Regression (Numpy), Logistic Regression (Sklearn), KNN (Numpy)
 - **Giải thích implement bằng NumPy:**
   - Các bước tiền xử lý, huấn luyện và dự đoán đều sử dụng NumPy để thao tác ma trận, vector hóa tính toán trọng số, hàm sigmoid, v.v.
 
@@ -89,9 +85,9 @@ $ jupyter notebook
 ```
 lab02/
 ├── data/
-│   ├── raw/                # Dữ liệu gốc (BankChurners.csv)
-│   └── processed/          # Dữ liệu đã xử lý (preprocessed_data.npz)
-├── notebooks/              # Jupyter Notebooks: khám phá, tiền xử lý, modeling
+│   ├── raw/                           # Dữ liệu gốc (BankChurners.csv)
+│   └── processed/                     # Dữ liệu đã xử lý (preprocessed_data.npz)
+├── notebooks/                         # Jupyter Notebooks: khám phá, tiền xử lý, modeling
 │   ├── 01_data_exploration.ipynb      # Phân tích, khám phá dữ liệu
 │   ├── 02_preprocessing.ipynb         # Tiền xử lý dữ liệu
 │   ├── 03_modeling.ipynb              # Huấn luyện, đánh giá mô hình
@@ -107,11 +103,11 @@ lab02/
   - Thử nghiệm hai mô hình khác nhau (Logistic Regression và KNN) để so sánh hiệu quả khi dữ liệu bị lệch lớp.
 
 ## Future Improvements
-- Cân bằng lại dữ liệu bằng oversampling, undersampling hoặc điều chỉnh ngưỡng dự đoán để tăng khả năng phát hiện khách hàng rời đi
-- Thử nghiệm thêm các mô hình như Naive Bayes, SVM, Decision Tree hoặc các phương pháp ensemble để đánh giá hiệu suất đa chiều
-- Tối ưu hóa Logistic Regression bằng cách điều chỉnh learning rate, số epoch hoặc sử dụng mini-batch gradient descent
-- Sử dụng one-hot encoding cho các biến phân loại và thực hiện phân tích dữ liệu nâng cao để khai thác tốt hơn các đặc trưng
-- Đóng gói mô hình thành API, xây dựng dashboard trực quan hóa kết quả và tài liệu hóa pipeline để dễ dàng triển khai thực tế và mở rộng về sau
+- Cân bằng lại dữ liệu bằng oversampling, undersampling hoặc điều chỉnh ngưỡng dự đoán để tăng khả năng phát hiện khách hàng rời đi.
+- Thử nghiệm thêm các mô hình như Naive Bayes, SVM, Decision Tree hoặc các phương pháp ensemble để đánh giá hiệu suất đa chiều.
+- Tối ưu hóa Logistic Regression bằng cách điều chỉnh learning rate, số epoch hoặc sử dụng mini-batch gradient descent.
+- Sử dụng one-hot encoding cho các biến phân loại và thực hiện phân tích dữ liệu nâng cao để khai thác tốt hơn các đặc trưng.
+- Đóng gói mô hình thành API, xây dựng dashboard trực quan hóa kết quả và tài liệu hóa pipeline để dễ dàng triển khai thực tế và mở rộng về sau.
 
 ## Contributors
 - Huỳnh Yến Nhi
