@@ -4,19 +4,19 @@
 Dự án này dự đoán khả năng khách hàng rời bỏ ngân hàng (churn) dựa trên dữ liệu giao dịch và thông tin cá nhân, sử dụng NumPy và các thuật toán học máy cơ bản.
 
 ## Mục lục
-1. Giới thiệu
-2. Dataset
-3. Method
-4. Installation & Setup
-5. Usage
-6. Results
-7. Project Structure
-8. Challenges & Solutions
-9. Future Improvements
-10. Contributors
-11. Thông tin tác giả
-12. Contact
-13. License
+1. [Giới thiệu](#giới-thiệu)
+2. [Dataset](#dataset)
+3. [Method](#method)
+4. [Installation & Setup](#installation--setup)
+5. [Usage](#usage)
+6. [Results](#results)
+7. [Project Structure](#project-structure)
+8. [Challenges & Solutions](#challenges--solutions)
+9. [Future Improvements](#future-improvements)
+10. [Contributors](#contributors)
+11. [Thông tin tác giả](#thông-tin-tác-giả)
+12. [Contact](#contact)
+13. [License](#license)
 
 ## Giới thiệu
 - **Mô tả bài toán:** Dự đoán khách hàng có rời bỏ ngân hàng hay không dựa trên dữ liệu lịch sử giao dịch và thông tin cá nhân.
